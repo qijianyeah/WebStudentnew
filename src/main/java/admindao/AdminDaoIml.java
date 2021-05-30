@@ -30,12 +30,12 @@
        {}
 	  
 	  /**
-		  *查找所有管理员信息 ���������û� 
+		  *查找所有管理员信息
 		  * @param
 		  * @return List 
 		  */
 	  public List findAllAdmin()
-    {   sql="select * from user";
+    {   sql="select * from llc.user";
        try{
         conn = DB.getConn();
 	    sta = conn.createStatement();
@@ -79,7 +79,7 @@
 		  */
 	  public UseBean findAdminPsaaword (String adminName)
 		{
-		  sql="select * from user where usename='"+adminName+"'";
+		  sql="select * from llc.user where usename='"+adminName+"'";
 		  UseBean useBean=null;
 		    try {
 		    	conn = DB.getConn();
@@ -124,7 +124,7 @@
            String newPassword=adminpasswordForm.getNewPw2();
        try {
            
-            sql="update user set password='"+newPassword+"' where id="+id;
+            sql="update llc.user set password='"+newPassword+"' where id="+id;
 		    conn = DB.getConn();
 			sta = conn.createStatement();
 			sta.executeUpdate(sql); 
