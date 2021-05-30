@@ -15,27 +15,16 @@ String path = request.getContextPath();
 		<meta http-equiv="description" content="This is my page" />
 
 	<!-- 	<link rel="stylesheet" type="text/css" href="<%=path %>/css/base.css" />	 -->
-	
-        <script language="javascript">
-           function adminDel(userId)
+	<script language="javascript">
+           function courseDel(courseId)
            {
                if(confirm('您确定删除吗？'))
                {	
               
-                   window.location.href="<%=path %>/UserDel?userId="+userId;
+                   window.location.href="<%=path %>/courseDel?courseId="+courseId;
                }
            }
-           
-            
-           	function check1(){
-				if( document.getElementByName("username").value==""){
-					alert("请输入用户名");
-					return false;
-				}
-					document.text.submit();
-			}
-           
-       </script>
+    </script>
 		<style type="text/css">
 		body {
 			 background:url(images/bg.gif);
@@ -45,56 +34,40 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="2" >
-			<table>
-			<form action="<%=path %>/studentInfo" name="formFind" method="post">
-				<tr >
-				用户查询
-				</tr>
-				<tr>
-					 <td width="25%" bgcolor="#FFFFFF" align="right">  请输入用户名：</td>
-				    <td width="75%" bgcolor="#FFFFFF" align="left">
-				        <input type="text" name="username" size="20"/>
-				        <input type="submit" value="提交" onClick="check1()"/>&nbsp;
-				    </td>
-				</tr>
-				</form>
-				</table>
+			 
 			<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
 				<tr bgcolor="#E7E7E7">
-					<td height="14" colspan="6" align='center'>&nbsp;学生信息&nbsp;</td>
+					<td height="14" colspan="6" align='center'>&nbsp;课程信息&nbsp;</td>
 				</tr>
 				<tr align="center" bgcolor="#FAFAF1" height="22">
-					<td width="18%">ID</td>
-					<td width="18%">用户名</td>
-					<td width="18%">密码</td>
-					<td width="18%">性别</td>
-					<td width="18%">邮箱</td>
-					<td width="10%">操作</td>
+					<td width="20%">ID</td>
+					<td width="20%">课程名</td>
+					<td width="20%">任课教师</td>
+					<td width="20%">课程学分</td>
+					<td width="20%">操作</td>
+					 
 		        </tr>	
-				<c:forEach items="${user}" var="s">
+				<c:forEach items="${AllCourse}" var="s">
 				<tr align='center' bgcolor="#FFFFFF" height="22">
 					<td bgcolor="#FFFFFF" align="center">
 						${s.id}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						${s.name}
+						${s.className}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    ${s.password}
+					    ${s.teacher}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					   ${s.sex}
-					</td>
-					<td bgcolor="#FFFFFF" align="center">
-					    ${s.email}
-					</td>
-					<td bgcolor="#FFFFFF" align="center">
-						 <a href="#" onclick="adminDel(${s.id})" >删除</a> 
-						 <a href="<%=path %>/updataUser?id=${s.id}">修改</a> 
+					   ${s.score}
+					</td>	 
+				    <td bgcolor="#FFFFFF" align="center">
+						 <a href="#" onclick="courseDel(${s.id})" >删除</a>
+					    <a href="<%=path %>/UpdataCourse?id=${s.id}">修改</a>
 					</td>
 				</tr>
 				</c:forEach>
 			</table>
-			
+					    
 	</body>
 </html>

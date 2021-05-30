@@ -3,6 +3,7 @@
 
   <head>
     <title>表格</title>
+	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -32,7 +33,7 @@
              return false; 
 		   }
 		  
-		  if ((f.radio[0].checked==false )&amp;&amp; (f.radio[1].checked==false))
+		  if (f.radio[0].checked==false &amp;&amp; f.radio[1].checked==false)
             {
              alert("请指定性别");
              f.radio[0].focus();
@@ -91,8 +92,7 @@
 				<tr >	
 					<td></td>
 					 
-					<td align="center">
-						<input type="button" value="提交" name="register" onclick="check1()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<td align="center"><input type="button" value="提交" name="register" onClick="check1()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</tr>
 				
 			</table>			

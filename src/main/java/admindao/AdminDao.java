@@ -7,22 +7,16 @@
    import forms.AdminPasswordForm;
    import mode.UseBean;
 
-
    /**
-   * 
-   * @author Administrator
    * 管理员接口
    */
 
    public interface  AdminDao {
 	   
-	    
-	    
-	   
+
 	   List list = new ArrayList();
 	    
-	   
-	  
+
 	  /**
 	   *查找所有管理员信息
 	   * @param
@@ -40,7 +34,7 @@
 		 
    
 	     /**
-		  *修改管理员密码 ���������û� 
+		  *修改管理员密码
 		  * @param adminpasswordForm
 		  * @return null 
 		  */

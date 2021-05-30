@@ -58,21 +58,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 <base target="main" />
   </head>
   <body>
-  	<div class='bitem'>
-  	
-  		<div class='title'><tr>学生信息</tr><br></div>
-  		<tr> 学生信息查询 </tr><br>
+  	 <div class='bitem'>
+  	    <div class='title'><tr>学生信息</tr><br></div>
+  		<tr><a href='<%=path %>/FindStudentInfo' target='main'>学生信息查询</a></tr><br>
   	</div>
   
   	<div class='bitem'>
   		<div class='title'><tr >学生成绩</tr><br/></div>
-  		<tr> 学生成绩查询 </tr><br>
+  		<tr><a href='<%=path %>/FindStudentgradeInfo' target='main'>学生成绩查询</a></tr><br>
   	</div>
   	
   	<div class='bitem'>
   		<div class='title'><tr >通告</tr><br></div>
-  		<tr> 通告信息管理 </tr><br>
+  		<tr><a href='<%=path %>/FindStudentTitleInfo' target='main'>通告信息查询</a></tr><br>
   	</div>
   	
+  	<div class='bitem'>
+  	    <div class='title'><tr>课程信息</tr><br></div>
+  		<tr><a href='<%=path %>/FindClassInfo' target='main'>课程信息查询</a></tr><br>
+  	</div>
   </body>
 </html>

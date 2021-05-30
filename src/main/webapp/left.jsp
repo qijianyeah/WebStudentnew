@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -44,15 +44,14 @@
 		  margin-top:0px;
 			
 		}
-		.title {
-			margin-left: 2px;
-			background: url(images/menubg.gif);
-			background-repeat: no-repeat;
-			text-align: center;
-			cursor: pointer;
-			height: 26px;
-			line-height: 26px;
-		}
+		.title{
+			margin-left:2px;
+			background:url(images/menubg.gif);
+			background-repeat:no-repeat;
+			text-align:center;
+			cursor:pointer;
+			height:26px;
+		  	line-height:26px;
 	</style>
 	<script language='javascript'>var curopenItem = '1';</script>
 	<script language="javascript" type="text/javascript" src="js/menu.js"></script>
@@ -60,42 +59,33 @@
   </head>
   <body target="main">
   	<div class='bitem'>
-  		<div class='title'><tr>学生信息</tr><br></div>
+  	
+  	<div class='title'><tr>学生信息</tr><br></div>
   		<tr><a href='<%=path %>/studentInfo' target='main'>学生信息管理</a></tr><br>
-<%--  		<tr> 学生信息录入 </tr><br>--%>
-<%--  		<tr> 学生信息修改 </tr><br>--%>
   	</div>
   
   	<div class='bitem'>
+  		<div class='title'><tr >学生成绩</tr><br/></div>
+  		<tr><a href='<%=path %>/StudentgradeInfo' target='main'>学生成绩管理</a></tr><br>
+  		<tr><a href='<%=path %>/GradeAdd' target='main'>学生成绩录入</a></tr><br>
 
-  		<div class='title'>
-<%--			<tr >学生成绩</tr><br/>--%>
-		</div>
-		<div class='title'>
-			<tr>
-				<a href='<%=path %>/StudentgradeInfo' target='main'>学生成绩管理</a>
-			</tr><br>
-		</div>
-		<div class='title'>
-			<tr>
-				<a href='<%=path %>/GradeAdd' target='main'>学生成绩录入</a>
-			</tr><br>
-		</div>
+  	</div>
+  	<div class='bitem'>
+  		<div class='title'><tr >课程</tr><br/></div>
+  		<tr><a href='<%=path %>/FindAllCourseInfo' target='main'>课程管理</a></tr><br>
+  	    <tr><a href='<%=path %>/courseAdd' target='main'>课程录入</a></tr><br>
 
   	</div>
   	
-<%--  	<div class='bitem'>--%>
-<%--  		<div class='title'>--%>
-<%--			<tr >通告</tr><br>--%>
-<%--		</div>--%>
-<%--  		<tr> 通告信息管理 </tr><br>--%>
-<%--  		<tr> 添加通告 </tr>--%>
-<%--  	</div>--%>
-
-<%--  	<div class='bitem'>--%>
-<%--  		<div class='title'><tr>管理员账号</tr><br></div>--%>
-<%--  		<tr> 管理员账号管理 </tr><br>--%>
-<%--  		<tr> 修改密码 </tr>--%>
-<%--  	</div>--%>
+  	<div class='bitem'>
+  		<div class='title'><tr >通告</tr><br></div>
+  		<tr><a href='<%=path %>/NoticeInfo' target='main'>通告信息管理</a></tr><br>
+  		<tr><a href='<%=path %>/ForwardAddNotice' target='main'>添加通告</a></tr>
+  	</div>
+  	<div class='bitem'>
+  		<div class='title'><tr>管理员账号</tr><br></div>
+  		<tr><a href='<%=path %>/AdminInfo' target='main'>管理员账号管理</a></tr><br>
+  		<tr><a href='<%=path %>/UpdataAdmin' target='main'>修改密码</a></tr>
+  	</div>
   </body>
 </html>

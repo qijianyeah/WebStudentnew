@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 <body >
 		<h1 align="center">对不起，此用户名已有人使用,请重新注册！</h1>
-		<div align="center"><a href="/WebStudentloginreg/index.jsp">点击这里返回</a>
+		<div align="center"><a href="/WebStudentnew/index.jsp">点击这里返回</a>
 		</div>
 </body>
 </html>
