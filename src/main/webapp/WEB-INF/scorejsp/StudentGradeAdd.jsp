@@ -34,7 +34,7 @@
         </script>
         <style type="text/css">
 	body {
-		 background:url(../images/bg.gif);
+		 background:url(images/bg.gif);
 		}
 	</style>
 	</head>

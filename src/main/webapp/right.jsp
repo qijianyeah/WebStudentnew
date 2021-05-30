@@ -1,9 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page import="java.util.* ,java.text.SimpleDateFormat;" %> 
+  
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -23,11 +24,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
   </head>
   <%!String getDate() 
-	{
-		Date now = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
-		return sdf.format(now);
-	}
+{ 
+Date now = new Date(); 
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日"); 
+return sdf.format(now); 
+} 
 %>
   <body>
   	<div class="nav" id="container">
@@ -44,8 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<td class="main_con_item1">系统名称：</td>
 			<td class="main_con_item2">学生信息管理系统</td>
 			<td class="main_con_item3">服务器操作系统：</td>
-<%--			<td class="main_con_item4">windows XP</td>--%>
-			<td class="main_con_item4">Windows 10 专业版 </td>
+			<td class="main_con_item4">windows XP</td>
 		</tr>
 		<tr id="maindetail1" onmouseover="changecolor(this);" onmouseout="changecolor(this);">	
 			<td  class="main_con_item1">服务器：</td>
@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</tr>
 		<tr id="maindetail1" onmouseover="changecolor(this);" onmouseout="changecolor(this);">	
 			<td class="main_con_item1">学校名称：</td>
-			<td class="main_con_item2">江西农业大学 </td>
+			<td class="main_con_item2">aaaaaa</td>
 			<td class="main_con_item3">通迅地址：</td>
 			<td class="main_con_item4">aaaaaaaaaa</td>
 		</tr>

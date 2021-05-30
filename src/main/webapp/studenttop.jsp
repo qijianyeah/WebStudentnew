@@ -33,13 +33,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			color:red;
 		}
 	</style>
-	 
+	<script type="text/javascript">
+		function logout()
+		{
+		   if(confirm("确定要退出本系统吗??"))
+		   {
+			  window.parent.location="LoginOut";
+		   }
+		}
+		function reflash(){
+			
+			  window.parent.location="StudentReflash";
+		  
+		}
+	</script>
   </head>
   <body class="top">
   	<table >
   		<div class="text">
   		<p >学生信息管理系统欢迎您</p></div>
-  		 
+  		<div class="rigth">
+  		<a href="#" onclick="logout()">退出系统</a> &nbsp;&nbsp;&nbsp;<a href="#" onclick="reflash()">刷新</a>
+  		</div>
   	</table>
   </body>
 </html>

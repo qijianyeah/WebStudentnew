@@ -7,24 +7,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-	  <script language="javascript">
-		  function checka(){
-			  if( document.getElementById("username").value==""){
-				  alert("请输入用户名");
-				  return false;
-			  }
-			  if( document.getElementById("password").value==""){
-				  alert("请输入密码");
-				  return false;
-			  }
-			  document.text.submit();
-		  }
-		  function checkb(){
-
-			  var url="<%=path %>/register.html";
-			  window.location.href=url;
-		  }
-	  </script>
     <base href="<%=basePath%>">
     
     <title>My JSP 'index.jsp' starting page</title>
@@ -33,9 +15,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
-<%--	<link rel="stylesheet" type="text/css" href="styles.css">--%>
-
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 	<style type="text/css">
 	body{margin:0px; padding:0px; width:100%;text-align:center;
 		
@@ -60,15 +42,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	}
 	</style>
-
+	<script language="javascript">
+	function check1(){
+		if( document.getElementById("username").value==""){
+			alert("请输入用户名");
+			return false;
+		}
+		if( document.getElementById("password").value==""){
+			alert("请输入密码");
+			return false;
+		}
+		
+		document.text.submit();
+	}
+	function check2(){
+		
+		var url="<%=path %>/register.html";
+		window.location.href=url;
+	}
+	</script>
   </head>
   
   <body >
-
     <div class="bg" >
     	<div class="top">学生信息管理系统  
     	</div>
-    	<form name="text" action="LoginServelet" method="post">
+    	<form name="text" action="Login" method="post">
     	<div class="mid" >
     		<tr>
     			<td>用户名：</td><td><input type="text" name="username" id="username" ></td>
@@ -85,14 +84,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</tr>
     		<br><br>
     		<tr>
-				<td>
-<%--					<input type="button" value="登入" name="login" onclick="checka()">--%>
-					<input type="submit" value="登入">
-				</td>&nbsp;&nbsp;
-				<td>
-					<input type="button" value="注册" name="register" onclick="checkb()">
-
-				</td>
+    			<td><input type="button" value="登陆" name="login" onClick="check1()"></td>&nbsp;&nbsp;
+    			<td ><input type="button" value="注册" name="register" onClick="check2()"></td>
     		</tr>
     	</div>
     	</form>

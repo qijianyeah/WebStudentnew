@@ -1,8 +1,9 @@
+<%@  page  isELIgnored="false" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%> 
 <%@ page isELIgnored="false" %> 
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	String path = request.getContextPath();
+String path = request.getContextPath();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -24,8 +25,8 @@
 		    }
 		    
 			function check1(){
-				if( document.getElementById("grade").value==""){
-					alert("请输入学生成绩");
+				if( document.getElementById("title").value==""){
+					alert("请输入标题");
 					return false;
 				}
 					document.text.submit();
@@ -39,45 +40,36 @@
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'> 
-			<form action="<%=path %>/StudentUpdateGradeFinsh?id=${grade.id}" name="formAdd" method="post">
+			<form action="<%=path %>/UpdataNoticeFinsh" name="formAdd" method="post">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 						<tr bgcolor="#EEF4EA">
-					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title' align='center'><span>学生成绩修改</span></td>
+					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title' align='center'><span>通知添加</span></td>
 					    </tr>
+					    <input type="hidden" name="id" size="20" value="${noticeBean.id}"/>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						         学生名：
+						         标题名：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="studentName" size="20"/ value="${grade.stu_name}"  readonly="true">
-						  
+						        <input type="text" name="title" size="30" value='${noticeBean.head}'/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        课程名：
+						        正文内容：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						    	 <input type="text" name="className" size="20"/ value="${grade.class_name}"  readonly="true">
-						    	
-							     
-						    </td>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        成绩：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="grade" id="grade" size="22" value="${grade.stu_grade}"/>
+						       <textarea rows="12" cols="80" name="text" >${noticeBean.text}</textarea>
 						    </td>
 						</tr>
+						
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						        &nbsp;
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						       <input type="submit" value="提交" onClick="check1()"/>&nbsp; 
+						       <input type="submit" value="修改" onClick="check1()"/>&nbsp; 
 						       <input type="reset" value="重置"/>&nbsp;
-						       <input type="button" value="取消" onclick="closeOpen()"/>
 						    </td>
 						</tr>
 					 </table>

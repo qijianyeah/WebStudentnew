@@ -1,10 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%--<%@ page import="java.util.* ,java.text.SimpleDateFormat;" %> --%>
+<%@ page import="java.util.* ,java.text.SimpleDateFormat;" %> 
   
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -27,7 +26,7 @@
   <%!String getDate() 
 { 
 Date now = new Date(); 
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日"); 
 return sdf.format(now); 
 } 
 %>

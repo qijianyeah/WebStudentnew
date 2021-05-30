@@ -1,6 +1,6 @@
- <%@ page isELIgnored="false" %>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ page isELIgnored="false" %>
 <%
 String path = request.getContextPath();
 %>
@@ -22,13 +22,17 @@ String path = request.getContextPath();
                if(confirm('您确定删除吗？'))
                {	
               
-                   window.location.href="<%=path %>/UserDel?userId="+userId;
+                   window.location.href="<%=path %>/NoticeDel?userId="+userId;
                }
            }
            
-            
+           function adminAdd()
+           {
+                 var url="<%=path %>/jsp/adminAdd.jsp";
+				 window.location.href=url;
+           }
            	function check1(){
-				if( document.getElementByName("username").value==""){
+				if( document.getElementById("userName").value==""){
 					alert("请输入用户名");
 					return false;
 				}
@@ -37,60 +41,39 @@ String path = request.getContextPath();
            
        </script>
 		<style type="text/css">
-		body {
-			 background:url(images/bg.gif);
-			}
+	body {
+		 background:url(images/bg.gif);
+		}
 	</style>
         
 	</head>
 
 	<body leftmargin="2" topmargin="2" >
-			<table>
-			<form action="<%=path %>/studentInfo" name="formFind" method="post">
-				<tr >
-				用户查询
-				</tr>
-				<tr>
-					 <td width="25%" bgcolor="#FFFFFF" align="right">  请输入用户名：</td>
-				    <td width="75%" bgcolor="#FFFFFF" align="left">
-				        <input type="text" name="username" size="20"/>
-				        <input type="submit" value="提交" onClick="check1()"/>&nbsp;
-				    </td>
-				</tr>
-				</form>
-				</table>
+			
 			<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
 				<tr bgcolor="#E7E7E7">
-					<td height="14" colspan="6" align='center'>&nbsp;学生信息&nbsp;</td>
+					<td height="14" colspan="6" align='center'>&nbsp;通告查看&nbsp;</td>
 				</tr>
 				<tr align="center" bgcolor="#FAFAF1" height="22">
-					<td width="18%">ID</td>
-					<td width="18%">用户名</td>
-					<td width="18%">密码</td>
-					<td width="18%">性别</td>
-					<td width="18%">邮箱</td>
-					<td width="10%">操作</td>
+					<td width="25%">ID</td>
+					<td width="25%">标题名</td>
+					<td width="25%">创建日期</td>
+					<td width="25%">操作</td>
 		        </tr>	
-				<c:forEach items="${user}" var="s">
+				<c:forEach items="${noticeList}" var="s">
 				<tr align='center' bgcolor="#FFFFFF" height="22">
 					<td bgcolor="#FFFFFF" align="center">
 						${s.id}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						${s.name}
+						<a href="<%=path %>/UpdateNotice?id=${s.id}">${s.head}</a>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    ${s.password}
+					    ${s.time}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					   ${s.sex}
-					</td>
-					<td bgcolor="#FFFFFF" align="center">
-					    ${s.email}
-					</td>
-					<td bgcolor="#FFFFFF" align="center">
-						 <a href="#" onclick="adminDel(${s.id})" >删除</a> 
-						 <a href="<%=path %>/updataUser?id=${s.id}">修改</a> 
+						<a href="#" onclick="adminDel(${s.id})" >删除</a>
+						<a href="<%=path %>/UpdateNotice?id=${s.id}">修改</a>
 					</td>
 				</tr>
 				</c:forEach>
