@@ -3,6 +3,7 @@
 
   import java.io.IOException;
   import javax.servlet.ServletException;
+  import javax.servlet.annotation.WebServlet;
   import javax.servlet.http.HttpServlet;
   import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import noticemanager.NoticeManager;
    * @author Administrator
    * 完成删除通告请求控制
    */
+  @WebServlet("/NoticeDel")
   public class NoticeDel extends HttpServlet {
 
 	@Override

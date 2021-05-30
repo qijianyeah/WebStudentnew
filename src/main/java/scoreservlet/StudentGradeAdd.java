@@ -1,6 +1,7 @@
 
   package scoreservlet;
 
+  import javax.servlet.annotation.WebServlet;
   import javax.servlet.http.HttpServlet;
   import java.io.IOException;
   import java.util.List;
@@ -18,6 +19,7 @@
    * @author Administrator
    * 完成添加学生成绩请求控制-转入添加成绩页面
    */
+  @WebServlet("/GradeAdd")
    public class StudentGradeAdd extends HttpServlet{
 
 	@Override

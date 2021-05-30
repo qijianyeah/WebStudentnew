@@ -3,6 +3,7 @@
 
   import java.io.IOException;
   import javax.servlet.ServletException;
+  import javax.servlet.annotation.WebServlet;
   import javax.servlet.http.HttpServlet;
   import javax.servlet.http.HttpServletRequest;
   import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@
    * @author Administrator
    * 转入添加通告页面控制
    */
+  @WebServlet("/ForwardAddNotice")
    public class ForwardAddNotice extends HttpServlet {
 
 	@Override

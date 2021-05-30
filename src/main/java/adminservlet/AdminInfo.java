@@ -7,7 +7,8 @@ import java.io.IOException;
    import java.util.ArrayList;
    import java.util.List;
    import javax.servlet.ServletException;
-   import javax.servlet.http.HttpServlet;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
    import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,6 +20,7 @@ import adminmanager.AdminManager;
      * @author Administrator
      * 完成显示所有管理员信息的控制
      */
+    @WebServlet("/AdminInfo")
     public class AdminInfo  extends HttpServlet{
 	
 	

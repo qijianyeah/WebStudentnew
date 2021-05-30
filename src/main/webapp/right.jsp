@@ -3,8 +3,10 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page import="java.util.* ,java.text.SimpleDateFormat;" %> 
-  
+<%--<%@ page import="java.util.* ,java.text.SimpleDateFormat;" %>--%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.*" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -23,12 +25,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	</style>
   </head>
-  <%!String getDate() 
-{ 
-Date now = new Date(); 
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日"); 
-return sdf.format(now); 
-} 
+  <%!
+	  String getDate() {
+		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+		return sdf.format(now);
+	  }
 %>
   <body>
   	<div class="nav" id="container">

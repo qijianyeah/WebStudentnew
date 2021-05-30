@@ -1,6 +1,7 @@
 
   package scoreservlet;
 
+  import javax.servlet.annotation.WebServlet;
   import javax.servlet.http.HttpServlet;
   import java.io.IOException;
   import javax.servlet.ServletException;
@@ -17,6 +18,7 @@
   * 完成删除指定学生的请求控制
   */
 
+  @WebServlet("/StudentGradeDel")
    public class StudentGradeDel extends HttpServlet{
 
 	@Override

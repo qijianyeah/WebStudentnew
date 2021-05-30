@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+	<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -84,8 +84,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</tr>
     		<br><br>
     		<tr>
-    			<td><input type="button" value="µÇÂ½" name="login" onClick="check1()"></td>&nbsp;&nbsp;
-    			<td ><input type="button" value="×¢²á" name="register" onClick="check2()"></td>
+    			<td><input type="button" value="µÇÂ½" name="login" onclick="check1()"></td>&nbsp;&nbsp;
+    			<td ><input type="button" value="×¢²á" name="register" onclick="check2()"></td>
     		</tr>
     	</div>
     	</form>

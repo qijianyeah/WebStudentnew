@@ -5,7 +5,8 @@
     import java.util.ArrayList;
     import java.util.List;
     import javax.servlet.ServletException;
-    import javax.servlet.http.HttpServlet;
+	import javax.servlet.annotation.WebServlet;
+	import javax.servlet.http.HttpServlet;
     import javax.servlet.http.HttpServletRequest;
     import javax.servlet.http.HttpServletResponse;
     import javax.servlet.http.HttpSession;
@@ -19,6 +20,7 @@
      * @author Administrator
      * 完成对管理员密码的修改控制
      */
+    @WebServlet("/updataAdminFinsh")
      public class UpdataAdminPasswordFinsh  extends HttpServlet{
 	 
 	

@@ -3,6 +3,7 @@
 
    import java.io.IOException;
    import javax.servlet.ServletException;
+   import javax.servlet.annotation.WebServlet;
    import javax.servlet.http.HttpServlet;
    import javax.servlet.http.HttpServletRequest;
    import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@
     * @author Administrator
     * 完成用户刷新请求控制
     */
+   @WebServlet("/Reflash")
     public class Reflash extends HttpServlet{
 
 	@Override
